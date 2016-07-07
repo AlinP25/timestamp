@@ -18,12 +18,12 @@ app.get('/:timeparameter', function (req, res) {
     if(!moment(time).isValid())
         res.end(JSON.stringify({
             'unix': null,
-            'humanReadable': null
+            'natural': null
         }));
     else
         res.end(JSON.stringify({
             'unix': moment(time).format('X'),
-            'humanReadable': moment(time).format('MMMM DD, YYYY')
+            'natural': moment(time).format('MMMM DD, YYYY')
         }));
 });
 
